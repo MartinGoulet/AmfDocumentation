@@ -1,8 +1,9 @@
+using Serveur.API.Infrastructure.Repositories;
+
 namespace Serveur.API.Model
 {
-    public class Serveur
+    public class Serveur : Entite
     {
-        public int Id { get; set; }
         public string Nom { get; set; }
         public string Domaine { get; set; }
     }
