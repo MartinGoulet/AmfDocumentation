@@ -1,0 +1,15 @@
+﻿import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { ServeurComponent } from './serveur.component';
+
+const routes: Routes = [
+    {
+        path: '', component: ServeurComponent
+    }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class ServeurRoutingModule { }
