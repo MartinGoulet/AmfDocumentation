@@ -34,17 +34,32 @@ namespace Serveur.API.Controllers
         /// <returns>Information du serveur</returns>
         [HttpGet]
         [Route("{id}")]
-        public async Task<ActionResult<Srv.Serveur>> GetById(int id) {
+        public async Task<ActionResult<Srv.Serveur>> GetById(int id)
+        {
 
             Srv.Serveur serveur = await _contexte.GetAsync(id);
-            
-            if(serveur == null)
+
+            if (serveur == null)
             {
                 return NotFound();
             }
-            
+
             return Ok(serveur);
-                
+
+        }
+
+        /// <summary>
+        /// Obtenir un serveur selon son identifiant
+        /// </summary>
+        /// <param name="id">Identifiant du serveur</param>
+        /// <returns>Information du serveur</returns>
+        [HttpGet]
+        [Route("GetLastAdded/{nombre}")]
+        public async Task<ActionResult<Srv.Serveur>> GetLastAdded(int nombre)
+        {
+
+            return Ok(await _contexte.GetLastAddedAsync(nombre));
+
         }
     }
 }

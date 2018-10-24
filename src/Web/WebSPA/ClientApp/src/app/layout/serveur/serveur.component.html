@@ -1,19 +1,35 @@
 <div>
   <app-page-header heading="{{ 'Servers' | translate }}" [icon]="'fa-fw fa-server'"></app-page-header>
 
-  <table class="table table-sm">
-    <thead class="thead-dark">
-      <tr>
-        <th>Nom</th>
-        <th>Domaine</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let s of serveurs">
-        <td>{{ s.nom }}</td>
-        <td>{{ s.domaine }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card card-default">
+        <div class="card-header">
+          <i _ngcontent-c4="" class="fa fa-server fa-fw"></i> Nouveaux serveurs
+        </div>
+        <div class="card-body">
+          <table class="table table-sm">
+            <thead class="thead-light">
+              <tr>
+                <th>Nom</th>
+                <th>Domaine</th>
+                <th>Date Création</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let s of serveurs">
+                <td class="col-nom"><a [routerLink]="['/serveurs/', s.id]">{{ s.nom }}</a></td>
+                <td class="col-domaine">{{ s.domaine }}</td>
+                <td class="col-date-creation">{{ s.dateCreation | date:'dd LLLL yyyy HH:mm:ss' }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
 
+    </div>
+  </div>
+  
 </div>

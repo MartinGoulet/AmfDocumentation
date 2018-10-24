@@ -4,11 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Serveur.API.Infrastructure.Repositories
 {
-    public class Repository<T> : IRepository<T> where T : Entite
+    public class Repository<T, TDbContext> : IRepository<T>
+        where T : Entite 
+        where TDbContext : DbContext 
     {
-        protected readonly DbContext _contexte;
+        protected readonly TDbContext _contexte;
 
-        public Repository(DbContext contexte)
+        public Repository(TDbContext contexte)
         {
             _contexte = contexte;
         }
