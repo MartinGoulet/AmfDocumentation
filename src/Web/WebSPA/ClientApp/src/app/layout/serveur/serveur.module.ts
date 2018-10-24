@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { ServeurRoutingModule } from './serveur-routing.module';
 import { ServeurComponent } from './serveur.component';
-import { PageHeaderModule } from './../../shared';
+import { PageHeaderModule } from '../../shared';
 
 @NgModule({
     imports: [CommonModule, ServeurRoutingModule, PageHeaderModule, TranslateModule],

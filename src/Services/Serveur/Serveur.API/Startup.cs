@@ -33,7 +33,8 @@ namespace Serveur.API
                 .AddCustomMVC(Configuration)
                 .AddCustomDbContext(Configuration)
                 .AddCustomSwagger(Configuration)
-                .AddCustomIntegration(Configuration);
+                .AddCustomIntegration(Configuration)
+                .AddCustomCors(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +49,7 @@ namespace Serveur.API
                 app.UseHsts();
             }
 
+            app.UseCors("MyPolicy");
             app.UseHttpsRedirection();
             app.UseMvcWithDefaultRoute();
 

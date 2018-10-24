@@ -74,6 +74,18 @@ public static class AddCustomExtensionMethods
         return services;
     }
 
+    public static IServiceCollection AddCustomCors(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        }));
+
+        return services;
+    }
+
     public static async Task<IApplicationBuilder> SeedData(this IApplicationBuilder app) 
     {
         using (var serviceScope = app.ApplicationServices.CreateScope())

@@ -1,6 +1,19 @@
 <div>
   <app-page-header heading="{{ 'Servers' | translate }}" [icon]="'fa-fw fa-server'"></app-page-header>
-  <p>
-    serveur works!
-  </p>
+
+  <table class="table table-sm">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nom</th>
+        <th>Domaine</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of serveurs">
+        <td>{{ s.nom }}</td>
+        <td>{{ s.domaine }}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>
