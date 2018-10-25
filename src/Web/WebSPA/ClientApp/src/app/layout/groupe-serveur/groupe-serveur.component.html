@@ -7,32 +7,30 @@
         <div class="card-header">
           <i _ngcontent-c4="" class="fa fa-object-group fa-fw"></i> Groupe serveur
         </div>
-        <div class="card-body">
-          <table class="table table-sm table-hover">
-            <thead class="thead-light">
-              <tr>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Catégorie</th>
-                <th>Zone</th>
-                <th>Numéro</th>
-                <th>Date Création</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let gs of groupeserveurs" [routerLink]="['/groupe-serveurs/', gs .id]">
-                <td class="col-nom">{{ gs.nom }}</td>
-                <td class="col-description">{{ gs.description }}</td>
-                <td class="col-domaine">{{ gs.categorie }}</td>
-                <td class="col-zone">{{ gs.zone }}</td>
-                <td class="col-numero">{{ gs.numero }}</td>
-                <td class="col-date-creation">{{ gs.dateCreation | date:'dd LLLL yyyy HH:mm:ss' }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <table class="card-body table table-hover">
+          <thead>
+            <tr>
+              <th>Nom</th>
+              <th>Description</th>
+              <th>Catégorie</th>
+              <th>Zone</th>
+              <th>Numéro</th>
+              <th>Date Création</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let gs of groupeserveurs" [routerLink]="['/groupe-serveurs/', gs .id]">
+              <td class="col-nom">{{ gs.nom }}</td>
+              <td class="col-description">{{ gs.description }}</td>
+              <td class="col-domaine">{{ gs.categorie }}</td>
+              <td class="col-zone">{{ gs.zone }}</td>
+              <td class="col-numero">{{ gs.numero }}</td>
+              <td class="col-date-creation">{{ gs.dateCreation | date:'dd LLLL yyyy HH:mm:ss' }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  
+
 </div>

@@ -10,4 +10,8 @@ export class GroupeServeurService {
     getAll(): Observable<IGroupeServeur[]> {
         return this.httpClient.get<IGroupeServeur[]>('http://localhost:5001/api/groupeserveurs');
     }
+
+    get(id: number): Observable<IGroupeServeur> {
+        return this.httpClient.get<IGroupeServeur>('http://localhost:5001/api/groupeserveurs/' + id);
+    }
 }

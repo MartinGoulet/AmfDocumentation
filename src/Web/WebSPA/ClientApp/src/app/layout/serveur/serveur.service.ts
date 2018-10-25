@@ -10,4 +10,8 @@ export class ServeurService {
     getAll(): Observable<IServeur[]> {
         return this.httpClient.get<IServeur[]>('http://localhost:5001/api/serveurs');
     }
+
+    getLastAdded(): Observable<IServeur[]> {
+        return this.httpClient.get<IServeur[]>('http://localhost:5001/api/serveurs/getlastadded/5');
+    }
 }

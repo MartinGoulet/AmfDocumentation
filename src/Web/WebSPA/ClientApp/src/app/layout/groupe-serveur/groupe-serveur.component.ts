@@ -19,8 +19,4 @@ export class GroupeServeurComponent implements OnInit {
     });
   }
 
-  afficher(gs: IGroupeServeur) {
-    alert(gs.nom);
-  }
-
 }

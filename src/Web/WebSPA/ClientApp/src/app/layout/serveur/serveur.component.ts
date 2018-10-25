@@ -13,7 +13,7 @@ export class ServeurComponent implements OnInit {
   constructor(private service: ServeurService) { }
 
   ngOnInit() {
-    this.service.getAll().subscribe((x) => {
+    this.service.getLastAdded().subscribe((x) => {
       this.serveurs = x;
     });
   }
