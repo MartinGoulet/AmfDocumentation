@@ -11,10 +11,12 @@ namespace Serveur.API.Infrastructure
         }
 
         public DbSet<Model.Serveur> Serveurs { get; set; }
+        public DbSet<Model.GroupeServeur> GroupeServeurs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new ServeurEntityTypeConfiguration());
+            builder.ApplyConfiguration(new GroupeServeurEntityTypeConfiguration());
         }
     }
 
