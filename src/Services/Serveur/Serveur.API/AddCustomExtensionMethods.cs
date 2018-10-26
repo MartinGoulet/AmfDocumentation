@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serveur.API;
 using Serveur.API.Infrastructure;
+using Serveur.API.Infrastructure.Repositories.Environnement;
 using Serveur.API.Infrastructure.Repositories.GroupeServeurRepository;
 using Serveur.API.Infrastructure.Repositories.ServeurRepository;
 using Swashbuckle.AspNetCore.Swagger;
@@ -75,6 +76,7 @@ public static class AddCustomExtensionMethods
     {
         services.AddTransient<IServeurRepository, ServeurRepository>();
         services.AddTransient<IGroupeServeurRepository, GroupeServeurRepository>();
+        services.AddTransient<IEnvironnementRepository, EnvironnementRepository>();
 
         return services;
     }

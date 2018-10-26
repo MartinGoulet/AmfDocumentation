@@ -22,18 +22,37 @@ namespace Serveur.API.Infrastructure
                 await context.GroupeServeurs.AddRangeAsync(ObtenirGroupeServeurs());
                 await context.SaveChangesAsync();
             }
+
+            if (!context.Environnements.Any())
+            {
+                await context.Environnements.AddRangeAsync(ObtenirEnvironnements());
+                await context.SaveChangesAsync();
+            }
+        }
+
+        private static IEnumerable<Model.Environnement> ObtenirEnvironnements()
+        {
+            return new List<Model.Environnement>()
+            {
+                new Model.Environnement() { Nom = "Unitaire", Code = "Unit"},
+                new Model.Environnement() { Nom = "Fonctionnel", Code = "Fonct"},
+                new Model.Environnement() { Nom = "Acceptation", Code = "Accpt"},
+                new Model.Environnement() { Nom = "PréProduction", Code = "PProd"},
+                new Model.Environnement() { Nom = "Production", Code = "Prod"},
+                new Model.Environnement() { Nom = "Laboratoire", Code = "Laboratoire"}
+            };
         }
 
         private static IEnumerable<Model.Serveur> ObtenirServeurs()
         {
             return new List<Model.Serveur>()
             {
-                new Model.Serveur() { Nom = "SQ-PAPP39", Domaine = "reso.local"},
-                new Model.Serveur() { Nom = "SM-DAPP54", Domaine = "dev.local"},
-                new Model.Serveur() { Nom = "SM-DCRM10", Domaine = "dev.local"},
-                new Model.Serveur() { Nom = "SQ-PAPP108", Domaine = "reso.local", IdGroupeServeur = 1},
-                new Model.Serveur() { Nom = "SQ-PAPP107", Domaine = "reso.local"},
-                new Model.Serveur() { Nom = "SQ-PBDD09", Domaine = "reso.local"}
+                new Model.Serveur() { Nom = "SQ-PAPP39", Domaine = "reso.local", IdEnvironnement = 5},
+                new Model.Serveur() { Nom = "SM-DAPP54", Domaine = "dev.local", IdEnvironnement = 2},
+                new Model.Serveur() { Nom = "SM-DCRM10", Domaine = "dev.local", IdEnvironnement = 1},
+                new Model.Serveur() { Nom = "SQ-PAPP108", Domaine = "reso.local", IdEnvironnement = 5, IdGroupeServeur = 1},
+                new Model.Serveur() { Nom = "SQ-PAPP107", Domaine = "reso.local", IdEnvironnement = 5},
+                new Model.Serveur() { Nom = "SQ-PBDD09", Domaine = "reso.local", IdEnvironnement = 5}
             };
         }
 

@@ -8,10 +8,19 @@ namespace Serveur.API.Model
     {
         public string Nom { get; set; }
         public string Domaine { get; set; }
-        
-        [ForeignKey("GroupeServuer")]
+
+        #region "Propriétés Navigations"
+
+        [ForeignKey("GroupeServeur")]
         public int? IdGroupeServeur { get; set; }
         public virtual GroupeServeur GroupeServeur { get; set; }
+
+
+        [ForeignKey("Environnement")]
+        public int? IdEnvironnement { get; set; }
+        public virtual Environnement Environnement { get; set; }
+
+        #endregion
 
     }
 }

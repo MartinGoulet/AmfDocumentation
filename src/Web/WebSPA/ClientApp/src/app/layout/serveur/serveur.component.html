@@ -12,6 +12,7 @@
             <tr>
               <th>Nom</th>
               <th>Domaine</th>
+              <th>Environnement</th>
               <th>Date Création</th>
               <th>Groupe Serveur</th>
             </tr>
@@ -20,6 +21,7 @@
             <tr *ngFor="let s of serveurs" [routerLink]="['/serveurs/', s .id]">
               <td class="col-nom"> {{ s.nom }} </td>
               <td class="col-domaine">{{ s.domaine }}</td>
+              <td class="col-domaine">{{ s.environnement.nom }}</td>
               <td class="col-groupe-serveur">{{ afficherGroupeServeur(s.groupeServeur) }}</td>
               <td class="col-date-creation">{{ s.dateCreation | date:'dd LLLL yyyy HH:mm:ss' }}</td>
             </tr>

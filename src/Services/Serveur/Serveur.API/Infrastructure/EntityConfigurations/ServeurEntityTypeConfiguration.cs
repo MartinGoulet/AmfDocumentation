@@ -29,6 +29,11 @@ namespace Serveur.API.Infrastructure.EntityConfigurations
                 .HasForeignKey(x => x.IdGroupeServeur)
                 .IsRequired(false);
 
+            builder.HasOne(x => x.Environnement)
+                .WithMany()
+                .HasForeignKey(x => x.IdEnvironnement)
+                .IsRequired();
+
         }
     }
 
