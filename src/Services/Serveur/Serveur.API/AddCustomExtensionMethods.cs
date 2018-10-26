@@ -62,7 +62,10 @@ public static class AddCustomExtensionMethods
         //     options.UseInMemoryDatabase("ServeurDb", null);
         // });
         
-        services.AddDbContext<ServeurContext>(opt => opt.UseInMemoryDatabase("ServeurDb", null));
+        services.AddDbContext<ServeurContext>(opt => {
+             opt.UseInMemoryDatabase("ServeurDb", null)
+                .ConfigureWarnings(w => w.Ignore(InMemoryEventId.TransactionIgnoredWarning));
+        });
         
         return services;
     }

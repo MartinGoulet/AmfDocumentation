@@ -2,7 +2,7 @@
   <app-page-header heading="{{ 'Servers' | translate }}" [icon]="'fa-fw fa-server'"></app-page-header>
 
   <div class="row">
-    <div class="col-lg-5">
+    <div class="col-lg-12">
       <div class="card card-default">
         <div class="card-header">
           <i _ngcontent-c4="" class="fa fa-server fa-fw"></i> Nouveaux serveurs
@@ -13,20 +13,19 @@
               <th>Nom</th>
               <th>Domaine</th>
               <th>Date Création</th>
+              <th>Groupe Serveur</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let s of serveurs" [routerLink]="['/serveurs/', s .id]">
               <td class="col-nom"> {{ s.nom }} </td>
               <td class="col-domaine">{{ s.domaine }}</td>
+              <td class="col-groupe-serveur">{{ afficherGroupeServeur(s.groupeServeur) }}</td>
               <td class="col-date-creation">{{ s.dateCreation | date:'dd LLLL yyyy HH:mm:ss' }}</td>
             </tr>
           </tbody>
         </table>
       </div>
-    </div>
-    <div class="col-lg-7">
-
     </div>
   </div>
 

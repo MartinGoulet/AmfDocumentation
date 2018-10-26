@@ -1,7 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IServeur } from '../../models/iserveur.model';
+import { IServeur } from '../models/iserveur.model';
 
 @Injectable({ providedIn: 'root' })
 export class ServeurService {

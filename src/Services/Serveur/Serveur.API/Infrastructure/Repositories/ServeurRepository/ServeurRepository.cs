@@ -13,6 +13,6 @@ namespace Serveur.API.Infrastructure.Repositories.ServeurRepository
         }
 
         public async Task<IEnumerable<Model.Serveur>> GetLastAddedAsync(int nb) => 
-            await _contexte.Serveurs.OrderByDescending(x => x.Id).Take(nb).ToArrayAsync();
+            await _contexte.Serveurs.Include(w => w.GroupeServeur).OrderByDescending(x => x.Id).Take(nb).ToArrayAsync();
     }
 }

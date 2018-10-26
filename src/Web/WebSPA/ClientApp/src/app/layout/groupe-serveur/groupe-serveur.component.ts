@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GroupeServeurService } from './groupe-serveur.service';
+import { GroupeServeurService } from '../../services/groupe-serveur.service';
 import { IGroupeServeur } from '../../models/igroupeserveur.model';
 
 @Component({

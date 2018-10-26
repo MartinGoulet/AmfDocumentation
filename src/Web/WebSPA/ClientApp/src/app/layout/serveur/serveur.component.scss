@@ -1,10 +1,14 @@
 .col-nom {
-    width: 30%;
+    width: 20%;
 }
 .col-domaine {
-    width: 30%;
+    width: 20%;
 }
 .col-date-creation {
     width: 30%;
+    white-space: nowrap;
+}
+.col-groupe-serveur {
+    width: 20%;
     white-space: nowrap;
 }

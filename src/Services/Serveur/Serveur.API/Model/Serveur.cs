@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 using Serveur.API.Infrastructure.Repositories;
 
 namespace Serveur.API.Model
@@ -7,6 +8,10 @@ namespace Serveur.API.Model
     {
         public string Nom { get; set; }
         public string Domaine { get; set; }
+        
+        [ForeignKey("GroupeServuer")]
+        public int? IdGroupeServeur { get; set; }
+        public virtual GroupeServeur GroupeServeur { get; set; }
 
     }
 }

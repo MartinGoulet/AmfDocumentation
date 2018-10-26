@@ -1,0 +1,37 @@
+<div class="card card-default">
+  <div class="card-header">
+    Catégorisation
+  </div>
+  <div class="card-body" [formGroup]="groupeServeurForm">
+
+    <div class="row">
+
+      <div class="form-group col-lg-12">
+        <label for="categorie">Catégorie</label>
+        <select class="form-control" id="categorie" required formControlName="categorie">
+          <option *ngFor="let pow of ['',1,2,3,4]" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-lg-12">
+        <label for="zone">Zone</label>
+        <input id="zone" type="text" class="form-control" formControlName="zone">
+      </div>
+      
+    </div>
+
+    <div class="row">
+
+      <div class="form-group col-lg-12">
+        <label for="numero">Numéro</label>
+        <input type="number" name="numero" id="numero" class="form-control" formControlName="numero">
+      </div>
+
+    </div>
+
+  </div>
+</div>

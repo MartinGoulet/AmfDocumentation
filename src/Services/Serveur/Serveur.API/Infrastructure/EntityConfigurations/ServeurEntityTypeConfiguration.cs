@@ -23,6 +23,12 @@ namespace Serveur.API.Infrastructure.EntityConfigurations
             builder.Property(cb => cb.Domaine)
                 .IsRequired()
                 .HasMaxLength(20);
+
+            builder.HasOne(x => x.GroupeServeur)
+                .WithMany()
+                .HasForeignKey(x => x.IdGroupeServeur)
+                .IsRequired(false);
+
         }
     }
 

@@ -1,0 +1,20 @@
+<div class="card card-default">
+  <div class="card-header">
+    Informations générales
+  </div>
+  <div class="card-body" [formGroup]="groupeServeurForm">
+
+    <div class="row">
+
+      <div class="form-group col-lg-12">
+        <label for="description">Description</label>
+        <input id="description" type="text" class="form-control" formControlName="description">
+        <small [hidden]="groupeServeurForm.controls.description.valid" class="text-danger">
+            Le champ description est requis
+        </small>
+      </div>
+
+    </div>
+
+  </div>
+</div>
