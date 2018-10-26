@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Serveur.API.Infrastructure;
-using Serveur.API.Infrastructure.Repositories.GroupeServeurRepository;
+using Serveur.API.Donnees.Repositories;
+using Serveur.API.Entites.Interfaces;
 using Srv = Serveur.API.Model;
 
 namespace Serveur.API.Controllers

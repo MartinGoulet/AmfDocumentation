@@ -1,6 +1,5 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
-using Serveur.API.Infrastructure.Repositories;
 
 namespace Serveur.API.Model
 {

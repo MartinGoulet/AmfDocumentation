@@ -1,11 +1,12 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Serveur.API.Entites.Interfaces;
 
-namespace Serveur.API.Infrastructure.Repositories
+namespace Serveur.API.Donnees.Repositories
 {
     public class Repository<T, TDbContext> : IRepository<T>
-        where T : Entite 
+        where T : Model.Entite 
         where TDbContext : DbContext 
     {
         protected readonly TDbContext _contexte;

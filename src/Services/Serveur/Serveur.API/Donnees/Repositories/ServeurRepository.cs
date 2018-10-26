@@ -1,10 +1,11 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using Serveur.API.Entites.Interfaces;
 using Serveur.API.Model;
 
-namespace Serveur.API.Infrastructure.Repositories.ServeurRepository
+namespace Serveur.API.Donnees.Repositories
 {
     public class ServeurRepository : Repository<Model.Serveur, ServeurContext>, IServeurRepository
     {

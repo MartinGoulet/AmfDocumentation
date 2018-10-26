@@ -1,6 +1,6 @@
 using System;
 
-namespace Serveur.API.Infrastructure.Repositories
+namespace Serveur.API.Model
 {
     public abstract class Entite
     {

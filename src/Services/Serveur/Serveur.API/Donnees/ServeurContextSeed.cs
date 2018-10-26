@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Serveur.API.Model;
 
-namespace Serveur.API.Infrastructure
+namespace Serveur.API.Donnees
 {
     public class ServeurContextSeed
     {

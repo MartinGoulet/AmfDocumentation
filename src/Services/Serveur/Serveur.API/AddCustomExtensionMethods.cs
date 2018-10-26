@@ -7,11 +7,10 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serveur.API;
-using Serveur.API.Infrastructure;
-using Serveur.API.Infrastructure.Repositories.Environnement;
-using Serveur.API.Infrastructure.Repositories.GroupeServeurRepository;
-using Serveur.API.Infrastructure.Repositories.ServeurRepository;
+using Serveur.API.Entites.Interfaces;
+using Serveur.API.Donnees.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
+using Serveur.API.Donnees;
 
 public static class AddCustomExtensionMethods
 {

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Serveur.API.Infrastructure.Repositories.ServeurRepository
+namespace Serveur.API.Entites.Interfaces
 {
     public interface IServeurRepository : IRepository<Model.Serveur>
     {

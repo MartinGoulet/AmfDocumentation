@@ -1,4 +1,6 @@
-namespace Serveur.API.Infrastructure.Repositories.Environnement
+﻿using Serveur.API.Entites.Interfaces;
+
+namespace Serveur.API.Donnees.Repositories
 {
     public class EnvironnementRepository : Repository<Model.Environnement, ServeurContext>, IEnvironnementRepository
     {

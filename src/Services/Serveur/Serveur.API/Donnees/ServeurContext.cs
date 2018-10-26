@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Serveur.API.Infrastructure.EntityConfigurations;
 
-namespace Serveur.API.Infrastructure
+namespace Serveur.API.Donnees
 {
     public class ServeurContext : DbContext
     {

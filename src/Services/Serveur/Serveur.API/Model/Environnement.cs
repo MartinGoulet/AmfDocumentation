@@ -1,4 +1,3 @@
-using Serveur.API.Infrastructure.Repositories;
 
 namespace Serveur.API.Model
 {
