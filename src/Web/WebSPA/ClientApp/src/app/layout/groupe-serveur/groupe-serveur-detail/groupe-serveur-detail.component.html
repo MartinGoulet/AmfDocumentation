@@ -1,46 +1,75 @@
 <div>
-  <app-page-header heading="Groupe Serveur" [icon]="'fa-fw fa-object-group'"></app-page-header>
-  <h2>{{ groupeserveur.nom }}</h2>
+    <app-page-header heading="Groupe Serveur" [icon]="'fa-fw fa-object-group'"></app-page-header>
+    <h2>{{ groupeserveur.nom }}</h2>
 
 </div>
 
+
 <div *ngIf="myForm">
 
-  <div class="row">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="enregistrer(myForm)">
 
-    <div class="col-lg-12">
+        <ngb-tabset>
+            <ngb-tab title="Informations générales">
+                <ng-template ngbTabContent>
 
-      <form [formGroup]="myForm" novalidate (ngSubmit)="enregistrer(myForm)">
 
-        <div class="row">
+                    <div class="row">
 
-          <div class="col-lg-8">
+                        <div class="col-lg-12">
 
-            <app-gs-information-generale [groupeServeurForm]="myForm" class="mb-3"></app-gs-information-generale>
 
-          </div>
 
-          <div class="col-lg-4">
-            <app-gs-categorisation [groupeServeurForm]="myForm" class="mb-3"></app-gs-categorisation>
-          </div>
+                            <div class="row">
 
-        </div>
+                                <div class="col-lg-8">
 
-      </form>
+                                    <app-gs-information-generale [groupeServeurForm]="myForm" class="mb-3"></app-gs-information-generale>
 
-    </div>
+                                </div>
 
-  </div>
+                                <div class="col-lg-4">
+                                    <app-gs-categorisation [groupeServeurForm]="myForm" class="mb-3"></app-gs-categorisation>
+                                </div>
 
-  <div class="row mt-3">
-    <div class="col-lg-12">
-      <div class="">
-        <button class="btn mr-2" type="submit" 
-                [ngClass]="{'btn-primary':myForm.dirty, 'btn-outline-primary':!myForm.dirty}"
-                [disabled]="!myForm.valid || !myForm.dirty" >Enregistrer</button>
-        <button class="btn btn-default mr-2" [routerLink]="['/groupe-serveurs']">Retour</button>
-      </div>
-    </div>
-  </div>
+                            </div>
 
+
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-lg-12">
+                            <div class="">
+                                <button class="btn mr-2" type="submit" [ngClass]="{'btn-primary':myForm.dirty, 'btn-outline-primary':!myForm.dirty}" [disabled]="!myForm.valid || !myForm.dirty">Enregistrer</button>
+                                <button class="btn btn-default mr-2" [routerLink]="['/groupe-serveurs']">Retour</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><b>Fancy</b> title</ng-template>
+                <ng-template ngbTabContent>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid.
+                    <p>Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum
+                        PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard
+                        ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab title="Disabled" [disabled]="true">
+                <ng-template ngbTabContent>
+                    <p>Sed commodo, leo at suscipit dictum, quam est porttitor sapien, eget sodales nibh elit id diam. Nulla facilisi. Donec egestas ligula vitae odio interdum aliquet. Duis lectus turpis, luctus eget tincidunt eu, congue et odio. Duis pharetra
+                        et nisl at faucibus. Quisque luctus pulvinar arcu, et molestie lectus ultrices et. Sed diam urna, egestas ut ipsum vel, volutpat volutpat neque. Praesent fringilla tortor arcu. Vivamus faucibus nisl enim, nec tristique ipsum euismod
+                        facilisis. Morbi ut bibendum est, eu tincidunt odio. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris aliquet odio ac lorem aliquet ultricies in eget neque. Phasellus nec tortor vel
+                        tellus pulvinar feugiat.</p>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
+
+
+    </form>
 </div>

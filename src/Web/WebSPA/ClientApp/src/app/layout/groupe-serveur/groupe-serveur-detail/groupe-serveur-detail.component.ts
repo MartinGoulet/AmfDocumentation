@@ -34,18 +34,18 @@ export class GroupeServeurDetailComponent implements OnInit {
   creerFormulaire(gs : IGroupeServeur) {
 
     this.myForm = this.fb.group({
-      description: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
-      categorie: ['', [Validators.required]],
-      numero: ['', [Validators.required]],
-      zone: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(5)]]
+      description: [gs.description, [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
+      categorie: [gs.categorie, [Validators.required]],
+      numero: [gs.numero, [Validators.required]],
+      zone: [gs.zone, [Validators.required, Validators.minLength(3), Validators.maxLength(5)]]
     });
-
-    this.myForm.setValue(gs);
 
   }
 
-  enregistrer() {
-
+  enregistrer(fg: FormGroup) {
+    let value : IGroupeServeur = Object.assign(this.groupeserveur, fg.getRawValue());
+    alert(JSON.stringify(value));
+    fg.markAsPristine();
   }
 
 }
