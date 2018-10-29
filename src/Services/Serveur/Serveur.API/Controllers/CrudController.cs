@@ -26,7 +26,7 @@ namespace Serveur.API.Controllers
         public async Task<ActionResult<TEntite>> GetById(int id)
         {
 
-            TEntite entite = await Repository.GetAsync(id);
+            TEntite entite = await GetEntiteById(id);
 
             if (entite == null)
             {
@@ -36,6 +36,8 @@ namespace Serveur.API.Controllers
             return Ok(entite);
 
         }
+
+        protected virtual async Task<TEntite> GetEntiteById(int id) => await Repository.GetAsync(id);
 
     }
 }

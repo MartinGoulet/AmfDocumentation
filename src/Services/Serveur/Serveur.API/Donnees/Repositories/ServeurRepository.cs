@@ -18,5 +18,12 @@ namespace Serveur.API.Donnees.Repositories
                   .Include(w => w.GroupeServeur).Include(w => w.Environnement)
                   .OrderByDescending(x => x.Id)
                   .Take(nb).ToArrayAsync();
+
+        public async Task<Model.Serveur> GetServeurWithIncludeAsync(int id) => 
+            await _contexte.Serveurs
+                  .Include(w => w.Environnement)
+                  .Include(w => w.GroupeServeur)
+                  .SingleOrDefaultAsync(x => x.Id == id);
+
     }
 }

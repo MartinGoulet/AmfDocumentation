@@ -13,6 +13,9 @@ namespace Serveur.API.Controllers
         {
         }
 
+        protected override async Task<Model.Serveur> GetEntiteById(int id) => 
+            await Repository.GetServeurWithIncludeAsync(id);
+
         /// <summary>
         /// Obtenir un serveur selon son identifiant
         /// </summary>
@@ -20,7 +23,7 @@ namespace Serveur.API.Controllers
         /// <returns>Information du serveur</returns>
         [HttpGet]
         [Route("GetLastAdded/{nombre}")]
-        public async Task<ActionResult<Model.Serveur>> GetLastAdded(int nombre) => 
+        public async Task<ActionResult<Model.Serveur>> GetLastAdded(int nombre) =>
             Ok(await Repository.GetLastAddedAsync(nombre));
     }
 }
