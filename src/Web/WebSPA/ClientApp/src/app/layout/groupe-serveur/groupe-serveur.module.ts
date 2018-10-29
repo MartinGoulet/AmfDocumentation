@@ -9,8 +9,8 @@ import { PageHeaderModule } from '../../shared';
 import { GroupeServeurComponent } from './groupe-serveur.component';
 import { GroupeServeurDetailComponent } from './groupe-serveur-detail/groupe-serveur-detail.component';
 import { CategorisationComponent } from './groupe-serveur-detail/components/categorisation/categorisation.component';
-import { InformationGeneraleComponent } from './groupe-serveur-detail/components/information-generale/information-generale.componen;
-import { SystemesComponent } from './groupe-serveur-detail/components/systemes/systemes.component't';
+import { InformationGeneraleComponent } from './groupe-serveur-detail/components/information-generale/information-generale.component';
+import { SystemesComponent } from './groupe-serveur-detail/components/systemes/systemes.component';
 
 @NgModule({
     imports: [
@@ -21,6 +21,6 @@ import { SystemesComponent } from './groupe-serveur-detail/components/systemes/s
         ReactiveFormsModule,
         NgbTabsetModule.forRoot()
     ],
-    declarations: [GroupeServeurComponent, GroupeServeurDetailComponent, CategorisationComponent, InformationGeneraleCompone, SystemesComponentnt]
+    declarations: [GroupeServeurComponent, GroupeServeurDetailComponent, CategorisationComponent, InformationGeneraleComponent, SystemesComponent]
 })
 export class GroupeServeurModule {}
