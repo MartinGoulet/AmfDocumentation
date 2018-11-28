@@ -40,14 +40,9 @@ namespace Inventaire.Api
                 app.UseHsts();
             }
 
-            app.UseCors("MyPolicy");
-            app.UseMvcWithDefaultRoute();
-
-            app.UseSwagger()
-               .UseSwaggerUI(c =>
-              {
-                  c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger XML Serveur API v1");
-              });
+            app.UseCors("MyPolicy")
+               .UseMvcWithDefaultRoute()
+               .UtiliserSwagger();
 
             await app.SeedData();
         }

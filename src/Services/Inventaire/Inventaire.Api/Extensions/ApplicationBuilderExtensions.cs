@@ -18,5 +18,19 @@ namespace Inventaire.Api.Extensions
 
             return app;
         }
+
+        public static IApplicationBuilder UtiliserSwagger(this IApplicationBuilder app)
+        {
+            app.UseSwagger()
+               .UseSwaggerUI(c =>
+              {
+                  c.SwaggerEndpoint("/swagger/v1/swagger.json", "Swagger XML Serveur API v1");
+              });
+
+            return app;
+        }
+
+
+
     }
 }
