@@ -7,11 +7,11 @@ using Serveur.API.Model;
 
 namespace Serveur.API.Donnees.Repositories
 {
-    public class GroupeServeurRepository : Repository<Model.GroupeServeur, ServeurContext>, IGroupeServeurRepository
+    public class GroupeServeurRepository : Repository<Model.GroupeServeurs.GroupeServeur, ServeurContext>, IGroupeServeurRepository
     {
         public GroupeServeurRepository(ServeurContext contexte) : base(contexte)
         {
         }
-
+        
     }
 }

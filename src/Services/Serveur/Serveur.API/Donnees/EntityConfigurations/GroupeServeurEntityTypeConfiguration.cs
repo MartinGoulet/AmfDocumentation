@@ -18,17 +18,11 @@ namespace Serveur.API.Infrastructure.EntityConfigurations
 
             builder.Property(cb => cb.Numero)
                 .IsRequired();
-            
-            builder.Property(cb => cb.Zone)
-                .IsRequired()
-                .HasMaxLength(5);
-
-            builder.Property(cb => cb.Categorie)
-                .IsRequired();
 
             builder.Property(cb => cb.Description)
                 .IsRequired()
                 .HasMaxLength(200);
+
         }
     }
 

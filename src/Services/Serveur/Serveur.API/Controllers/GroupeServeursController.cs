@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Serveur.API.Entites.Interfaces;
-using Serveur.API.Model;
+using Serveur.API.Model.GroupeServeurs;
 
 namespace Serveur.API.Controllers
 {

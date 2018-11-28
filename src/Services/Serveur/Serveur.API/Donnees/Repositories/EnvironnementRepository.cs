@@ -2,7 +2,7 @@
 
 namespace Serveur.API.Donnees.Repositories
 {
-    public class EnvironnementRepository : Repository<Model.Environnement, ServeurContext>, IEnvironnementRepository
+    public class EnvironnementRepository : Repository<Model.Pilotages.Environnement, ServeurContext>, IEnvironnementRepository
     {
         public EnvironnementRepository(ServeurContext contexte) : base(contexte)
         {

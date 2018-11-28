@@ -4,9 +4,9 @@ using Serveur.API.Model;
 
 namespace Serveur.API.Infrastructure.EntityConfigurations
 {
-    public class ServeurEntityTypeConfiguration : IEntityTypeConfiguration<Model.Serveur>
+    public class ServeurEntityTypeConfiguration : IEntityTypeConfiguration<Model.Serveurs.Serveur>
     {
-        public void Configure(EntityTypeBuilder<Model.Serveur> builder)
+        public void Configure(EntityTypeBuilder<Model.Serveurs.Serveur> builder)
         {
             builder.ToTable("Serveur");
 

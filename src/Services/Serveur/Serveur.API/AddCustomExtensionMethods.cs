@@ -1,22 +1,35 @@
-﻿using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Serveur.API;
 using Serveur.API.Entites.Interfaces;
 using Serveur.API.Donnees.Repositories;
 using Swashbuckle.AspNetCore.Swagger;
 using Serveur.API.Donnees;
+using Microsoft.AspNetCore.Mvc.Formatters;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using System.Buffers;
 
 public static class AddCustomExtensionMethods
 {
     public static IServiceCollection AddCustomMVC(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+        services.AddMvc(options =>
+        {
+            // Afin d'éliminer les références circulaires.
+            options.OutputFormatters.Clear();
+            options.OutputFormatters.Add(new JsonOutputFormatter(new JsonSerializerSettings()
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
+            }, ArrayPool<char>.Shared));
+        })
+        .AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver())
+        .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
         return services;
     }
@@ -73,9 +86,10 @@ public static class AddCustomExtensionMethods
 
     public static IServiceCollection AddCustomIntegration(this IServiceCollection services, IConfiguration configuration)
     {
-        services.AddTransient<IServeurRepository, ServeurRepository>();
-        services.AddTransient<IGroupeServeurRepository, GroupeServeurRepository>();
-        services.AddTransient<IEnvironnementRepository, EnvironnementRepository>();
+        services.AddScoped<IServeurRepository, ServeurRepository>();
+        services.AddScoped<IGroupeServeurRepository, GroupeServeurRepository>();
+        services.AddScoped<IEnvironnementRepository, EnvironnementRepository>();
+        services.AddScoped<ISystemeRepository, SystemeRepository>();
 
         return services;
     }

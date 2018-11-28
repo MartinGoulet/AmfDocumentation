@@ -3,10 +3,10 @@ using System.Threading.Tasks;
 
 namespace Serveur.API.Entites.Interfaces
 {
-    public interface IServeurRepository : IRepository<Model.Serveur>
+    public interface IServeurRepository : IRepository<Model.Serveurs.Serveur>
     {
-        Task<IEnumerable<Model.Serveur>> GetLastAddedAsync(int nb);
+        Task<IEnumerable<Model.Serveurs.Serveur>> GetLastAddedAsync(int nb);
 
-        Task<Model.Serveur> GetServeurWithIncludeAsync(int id);
+        Task<Model.Serveurs.Serveur> GetServeurWithIncludeAsync(int id);
     }
 }

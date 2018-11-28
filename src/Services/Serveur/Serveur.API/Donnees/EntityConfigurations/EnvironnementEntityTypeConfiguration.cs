@@ -4,9 +4,9 @@ using Serveur.API.Model;
 
 namespace Serveur.API.Infrastructure.EntityConfigurations
 {
-    public class EnvironnementEntityTypeConfiguration : IEntityTypeConfiguration<Model.Environnement>
+    public class EnvironnementEntityTypeConfiguration : IEntityTypeConfiguration<Model.Pilotages.Environnement>
     {
-        public void Configure(EntityTypeBuilder<Model.Environnement> builder)
+        public void Configure(EntityTypeBuilder<Model.Pilotages.Environnement> builder)
         {
             builder.ToTable("Environnement");
 

@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Serveur.API.Infrastructure.EntityConfigurations;
+using Serveur.API.Model;
 
 namespace Serveur.API.Donnees
 {
@@ -10,15 +11,27 @@ namespace Serveur.API.Donnees
         {
         }
 
-        public DbSet<Model.Serveur> Serveurs { get; set; }
-        public DbSet<Model.GroupeServeur> GroupeServeurs { get; set; }
-        public DbSet<Model.Environnement> Environnements { get; set; }
+        public DbSet<Model.Serveurs.Serveur> Serveurs { get; set; }
+        public DbSet<Model.GroupeServeurs.GroupeServeur> GroupeServeurs { get; set; }
+        public DbSet<Model.GroupeServeurs.ZoneGroupeServeur> ZoneGroupeServeurs { get; set; }
+        public DbSet<Model.Pilotages.Environnement> Environnements { get; set; }
+        public DbSet<Model.Systemes.Systeme> Systemes { get; set; }
+
+        public DbSet<Model.Jonctions.ZoneGroupeServeurSysteme> ZoneGroupeServeurSystemes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            // Serveurs
             builder.ApplyConfiguration(new ServeurEntityTypeConfiguration());
+            // Groupe Serveurs
             builder.ApplyConfiguration(new GroupeServeurEntityTypeConfiguration());
+            builder.ApplyConfiguration(new ZoneGroupeServeurEntityTypeConfiguration());
+            // Pilotages
             builder.ApplyConfiguration(new EnvironnementEntityTypeConfiguration());
+            // Systèmes
+            builder.ApplyConfiguration(new SystemeEntityTypeConfiguration());
+            // Jonctions
+            builder.ApplyConfiguration(new ZoneGroupeServeurSystemeEntityTypeConfiguration());
         }
     }
 

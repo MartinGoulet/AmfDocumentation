@@ -1,12 +1,16 @@
+﻿using System.Collections.Generic;
+using Serveur.API.Model.Jonctions;
 
-namespace Serveur.API.Model
+namespace Serveur.API.Model.GroupeServeurs
 {
-    public class GroupeServeur : Entite
+    public class ZoneGroupeServeur : Entite
     {
+        
         public int Categorie { get; set; }
         public string Zone { get; set; }
-        public int Numero { get; set; }
         public string Description { get; set; }
+        
+        public IList<ZoneGroupeServeurSysteme> GroupeServeurSystemes { get; set; }
 
         public string Nom
         {
@@ -18,7 +22,7 @@ namespace Serveur.API.Model
 
         public override string ToString()
         {
-            return $"GS-C{Categorie}-{Zone}-{Numero}";
+            return $"GS-C{Categorie}-{Zone}";
         }
     }
 }

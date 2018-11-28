@@ -1,7 +1,9 @@
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
+using Serveur.API.Model.Pilotages;
+using Serveur.API.Model.GroupeServeurs;
 
-namespace Serveur.API.Model
+namespace Serveur.API.Model.Serveurs
 {
     public class Serveur : Entite
     {

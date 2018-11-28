@@ -1,5 +1,5 @@
 
-namespace Serveur.API.Model
+namespace Serveur.API.Model.Pilotages
 {
     public class Environnement : Entite
     {

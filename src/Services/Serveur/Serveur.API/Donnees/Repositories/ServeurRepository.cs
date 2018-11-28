@@ -7,19 +7,19 @@ using Serveur.API.Model;
 
 namespace Serveur.API.Donnees.Repositories
 {
-    public class ServeurRepository : Repository<Model.Serveur, ServeurContext>, IServeurRepository
+    public class ServeurRepository : Repository<Model.Serveurs.Serveur, ServeurContext>, IServeurRepository
     {
         public ServeurRepository(ServeurContext contexte) : base(contexte)
         {
         }
 
-        public async Task<IEnumerable<Model.Serveur>> GetLastAddedAsync(int nb) => 
+        public async Task<IEnumerable<Model.Serveurs.Serveur>> GetLastAddedAsync(int nb) => 
             await _contexte.Serveurs
                   .Include(w => w.GroupeServeur).Include(w => w.Environnement)
                   .OrderByDescending(x => x.Id)
                   .Take(nb).ToArrayAsync();
 
-        public async Task<Model.Serveur> GetServeurWithIncludeAsync(int id) => 
+        public async Task<Model.Serveurs.Serveur> GetServeurWithIncludeAsync(int id) => 
             await _contexte.Serveurs
                   .Include(w => w.Environnement)
                   .Include(w => w.GroupeServeur)
